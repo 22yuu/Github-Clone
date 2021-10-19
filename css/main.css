@@ -63,7 +63,7 @@ a {
   background: #eee linear-gradient(to bottom, #fcfcfc, #eee);
   border: 1px solid #d5d5d5;
   border-radius: 4px;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   padding: 0 12px;
   font-size: 14px;
@@ -254,4 +254,175 @@ header .sub-menu li a:hover {
   padding: 0 25px;
   font-size: 20px;
   justify-content: center;
+}
+
+/* FEATURE */
+.section--feature {
+  background: #f5f5f5;
+  padding-top: 66px;
+}
+.section--feature .summary {
+  max-width: 820px; /* 가변하는 가로 넓이를 가지게 할 것이기 때문에 최대 가로 넓이만 정의*/
+  margin: 0 auto;
+  text-align: center;
+}
+.section--feature .video {
+  max-width: 650px;
+  margin: 50px auto;
+}
+.section--feature .video .video-ratio {
+  height: 0;
+  padding-top: 56.25%;
+  position: relative;
+}
+.section--feature .video .video-ratio iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+}
+.section--feature .tiles {
+  border-bottom: 1px solid #e5e5e5;
+  border-top: 1px solid #e5e5e5;
+}
+.section--feature .tiles .inner {
+  max-width: 1200px;
+}
+
+.section--feature .tiles ul {
+/*
+  grid 같은 경우 최신의 브라우저에서는 지원하는데 구형의 브라우저(IE)에서는
+  지원을 안할 수 있다.
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); */
+
+}
+
+.section--feature .tiles li {
+  padding: 34px 24px;
+  text-align: center;
+  line-height: 1.5;
+  border-right:  1px solid #e5e5e5;
+  box-sizing: border-box; /* padding이랑 border는 커지는 속성이 있으므로 박스 사이징 속성 부여 */
+  float: left;
+  width: 25%; /* padding이나 border 속성 존재 시 퍼센트 안 먹힐 수 있음 box-sizing 필수*/
+  /*
+  grid 대신 구형의 버전에서 사용할려면 아래의 속성을 부여
+  float: left;
+  width: 25%;
+
+  *float 속성을 사용할 경우 반드시 부모 태그에 clearfix class를 부여
+  */
+}
+
+.section--feature .tiles li:last-child {
+  border-right: none;
+}
+.section--feature .tiles li img {
+  max-width: 100%;
+  padding: 14px 10% 21px; /*위 좌우 아래*/
+  box-sizing: border-box;
+}
+.section--feature .tiles li h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.section--feature .tiles li p {
+  font-size: 14px;
+  color: #767676;
+}
+
+/* WHERE IS */
+.section--where-is .inner {
+  padding-top: 80px;
+}
+#map {
+  width: 100%;
+  height: 400px;
+  margin-top:40px;
+  border: 1px solid rgba(0,0,0.2);
+  border-bottom:none;
+  box-shadow: 0 0 20px rgba(0,0,0,.2);
+  box-sizing: border-box;
+}
+
+/* PRICING CARD */
+.section--pricing {
+  background: linear-gradient(#f5f5f5, #fff);
+}
+.section--pricing .inner {
+  padding: 80px 0;
+}
+.section--pricing .card {
+  display: flex;
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+.section--pricing .card .cell {
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section--pricing .card .cell1 .btn{
+  height: 50px;
+  font-size: 16px;
+}
+.section--pricing .card .cell2 {
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 1.5;
+  flex: 1;
+  border-left: 1px solid #e5e5e5;
+}
+
+/* FOOTER */
+footer {
+
+}
+footer .inner {
+  padding: 50px 0;
+  border-top: 1px solid #eee;
+}
+footer .site-links {
+  display: flex;
+}
+footer .site-links li {
+  font-size: 12px;
+  margin-right: 10px;
+  color: #767676;
+}
+footer .site-links li a {
+  color: #4078c0;
+}
+footer .site-links li a:hover {
+  text-decoration: underline;
+}
+footer .logo {
+  /* 로고를 가운데 정렬을 하는게 아니라 가운데 배치! 하는 코드 */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 24px;
+  height: 24px;
+}
+footer .logo:hover svg {
+  fill: #4078c0
+}
+#toggle-btn {
+  display: none;
+  background: url("../img/toggle-btn.svg");
+  width: 18px;
+  height: 24px;
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  cursor: pointer;
+  text-indent: -9999px;
 }
